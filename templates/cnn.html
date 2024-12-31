@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Daun Jagung - CNN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cnn.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Klasifikasi Daun Jagung menggunakan CNN</h1>
+        <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="fileInput" id="fileLabel">Pilih Gambar</label>
+            <input type="file" name="file" accept="image/*" required id="fileInput">
+            <button type="submit">Deteksi</button>
+            <button type="button" id="resetButton">Reset</button>
+        </form>
+        <div id="result" style="display: flex; justify-content: space-between;">
+            <img id="uploadedImage">
+            <div>
+                <p id="prediction"></p>
+                <p id="accuracy"></p>
+                <p style="text-align: center;" id="description"></p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='cnn.js') }}"></script>
+</body>
+
+</html>

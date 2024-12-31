@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Penyakit Daun Jagung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h2>Deteksi jagung</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#classification" class="nav-link">Deteksi</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="active-section">
+        <div class="hero">
+            <h1>Selamat Datang di Sistem Deteksi Daun Jagung</h1>
+            <p>Sistem ini menggunakan Convolutional Neural Network untuk mendeteksi penyakit pada daun jagung</p>
+            <a href="#classification" class="cta-button">Mulai Deteksi</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <h2>Tentang Sistem</h2>
+            <p>Sistem ini dikembangkan untuk membantu petani dalam mendeteksi penyakit pada tanaman jagung melalui
+                analisis gambar daun menggunakan teknologi Convolutional Neural Network (CNN).</p>
+            <div class="features">
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/accuracy.png') }}" alt="Akurasi">
+                    <h3>Akurasi Tinggi</h3>
+                    <p>Menggunakan model CNN yang telah dilatih dengan dataset yang luas</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/fast.png') }}" alt="Cepat">
+                    <h3>Deteksi Cepat</h3>
+                    <p>Hasil deteksi dapat diperoleh dalam hitungan detik</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/easy.png') }}" alt="Mudah">
+                    <h3>Mudah Digunakan</h3>
+                    <p>Interface yang user-friendly untuk semua pengguna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="classification">
+        {% include 'cnn.html' %}
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sistem Deteksi Penyakit Daun Jagung. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+<html>
